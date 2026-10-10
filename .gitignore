@@ -1,12 +1,3 @@
-# Build output
-build/
-*.o
-*.a
-*.bin
-*.elf
-*.map
-*.hex
-
-# IDE
-.vscode/
-.idea/
+qos_build/
+*.code-workspace
+.DS_Store

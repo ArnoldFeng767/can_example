@@ -1,0 +1,3 @@
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_slist.c:23:14:qurl_slist_add	16	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_slist.c:56:14:qurl_slist_add_strdup	24	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_slist.c:84:6:qurl_slist_del_all	16	static

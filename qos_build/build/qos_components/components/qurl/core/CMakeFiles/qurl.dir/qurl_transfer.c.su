@@ -1,0 +1,4 @@
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_transfer.c:39:14:qurl_trans_init	48	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_transfer.c:357:14:qurl_trans_completed	16	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_transfer.c:385:7:qurl_trans_check_headers	16	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_transfer.c:408:14:qurl_trans_follow	72	static

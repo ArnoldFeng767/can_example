@@ -1,0 +1,7 @@
+D:/unirtos-app/main/src/can_demo.c:491:13:can_cpu_usage_cb	16	static
+D:/unirtos-app/main/src/can_demo.c:145:13:can_object_event_cb	4	static
+D:/unirtos-app/main/src/can_demo.c:386:13:can_tx_once	40	static
+D:/unirtos-app/main/src/can_demo.c:172:21:can_ret_check	24	static
+D:/unirtos-app/main/src/can_demo.c:126:13:can_unit_event_cb	16	static
+D:/unirtos-app/main/src/can_demo.c:526:13:can_demo_process	120	static
+D:/unirtos-app/main/src/can_demo.c:581:6:unir_can_demo_init	16	static

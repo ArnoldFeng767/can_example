@@ -1,0 +1,17 @@
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_url.c:24:14:url_malloc	16	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_url.c:118:20:url_find_host_sep	16	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_url.c:146:19:url_char_needs_escaping	8	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_url.c:206:13:url_strcpy	32	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_url.c:718:21:url_hostname_check	56	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_url.c:93:21:url_junk_scan.part.0	16	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_url.c:46:6:qurl_url_url_free	8	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_url.c:264:7:qurl_url_dedotdotify	40	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_url.c:417:14:url_parse_login_details	56	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_url.c:616:14:qurl_url_parse_port	40	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_url.c:1295:14:qurl_url_decode	56	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_url.c:1358:14:qurl_url_create	8	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_url.c:1378:14:qurl_url_delete	8	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_url.c:1386:14:qurl_url_getopt	128	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_url.c:2002:12:qurl_url_is_absolute	24	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_url.c:976:21:url_parse	104	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_url.c:1670:14:qurl_url_setopt	120	static

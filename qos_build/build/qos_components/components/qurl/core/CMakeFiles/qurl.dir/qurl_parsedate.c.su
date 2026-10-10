@@ -1,0 +1,4 @@
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_parsedate.c:266:12:pd_oneortwodigit	16	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_parsedate.c:350:12:pd_parsedate.constprop	88	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_parsedate.c:546:13:qurl_pd_getdate	24	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_parsedate.c:564:13:qurl_pd_getdate_capped	24	static

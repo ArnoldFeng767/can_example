@@ -1,0 +1,5 @@
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_port.c:120:6:qurl_dns_thread_cb	64	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_port.c:52:14:qurl_port_prot_match_by_scheme	24	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_port.c:74:16:qurl_time_now	8	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_port.c:90:13:qurl_time_diff_ms	32	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_port.c:197:14:qurl_socket_resolve_async	48	static

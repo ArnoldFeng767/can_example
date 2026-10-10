@@ -1,0 +1,13 @@
+/* Copyright (C) 2020 UNIRTOS Technologies Limited and/or its affiliates("UNIRTOS").
+ * All rights reserved.
+ */
+
+#ifndef _APPS_CONFIG_H_
+#define _APPS_CONFIG_H_
+
+/**
+ * Standard AT command implementation
+ */
+/* #undef CONFIG_QAPP_UNIRTOS_STD_FUNC */
+
+#endif /* _APPS_CONFIG_H_ */

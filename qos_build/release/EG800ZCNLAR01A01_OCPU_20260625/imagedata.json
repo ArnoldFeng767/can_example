@@ -1,0 +1,90 @@
+{
+ "HashAlgorithm": "SHA256",
+ "imageinfo": [
+  {
+   "addr": 0,
+   "file": "ban_old_tool_poison.bin",
+   "flashsize": 0,
+   "hash": "0",
+   "type": "VIRTUALIMG"
+  },
+  {
+   "addr": 8400896,
+   "file": "ap_bootloader.bin",
+   "flashsize": 81920,
+   "hash": "4BE18CBA94AA3B7E6591794910D0800907F78F27321ACDE90226EB7F6B3607EB",
+   "type": "BL"
+  },
+  {
+   "addr": 8921088,
+   "file": "ap_at_command.bin",
+   "flashsize": 1925120,
+   "hash": "7DD42B87FFBFA2EB4AD6E83F849D02094C3AE7434313A34149A0F96C4F3B864D",
+   "type": "AP"
+  },
+  {
+   "addr": 8511488,
+   "file": "cp-demo-flash.bin",
+   "flashsize": 409600,
+   "hash": "92FC9ECAF84B633AD90F442EC94396FE1AEB5B19EE159FEA471063D98E09D6E8",
+   "type": "CP"
+  },
+  {
+   "addr": 10846208,
+   "file": "ap_application.bin",
+   "flashsize": 819200,
+   "hash": "734F9B26BABDB41F2F13F814EC250B36CAE0618A8C8A03905044FFEC347B1A68",
+   "type": "PKGFLX"
+  },
+  {
+   "addr": 12226560,
+   "file": "ap_updater.bin",
+   "flashsize": 147456,
+   "hash": "F4111189639C2604CE124255B1C61158DD9D7247C8B6C1422007D49457ECEFF4",
+   "type": "PKGFLX"
+  },
+  {
+   "addr": 0,
+   "file": "ec718pm_H1_PrMgrCfg.json.bin",
+   "flashsize": 1048576,
+   "hash": "6F8BA0467222B37AFC096BD38ACBFE50F0AF0C99C83AB6192CAE9AC3135E4035",
+   "type": "XPKGDPRM"
+  },
+  {
+   "addr": 0,
+   "file": "ec718pm_H1_format.json.bin",
+   "flashsize": 1048576,
+   "hash": "559823CDFEA1D39F0777AD32FE4C9BD5AB2285A45B4F9D191447DBA0C13BEEA7",
+   "type": "XPKGDCMN"
+  },
+  {
+   "addr": 0,
+   "file": "ec718pm_H1_prd_uart.baseini.bin",
+   "flashsize": 1048576,
+   "hash": "7C745753C3EED9EFF29E8A5C03B21A20C9A34D6FA42A6CDF5100C4E3E90CF639",
+   "type": "XPKGDCMN"
+  },
+  {
+   "addr": 0,
+   "file": "ec718pm_H1_prd_usb.baseini.bin",
+   "flashsize": 1048576,
+   "hash": "BA8CBA82F7797E3F59B3E2484DD6B1D2768345F64AEDEF634CFB4CEDFD1762B8",
+   "type": "XPKGDCMN"
+  }
+ ],
+ "imagepath": "D:\\unirtos-app\\qos_build\\release\\EG800ZCNLAR01A01_OCPU_20260625\\pkg_extract_tmp/",
+ "pkgarg": {
+  "pkgmode": 1,
+  "productname": "ec718pm_H1"
+ },
+ "version": "111",
+ "ExtractSyncRec": {
+  "LastSyncTime": 1790733873,
+  "LastSyncStat": 1,
+  "PackagePath": "D:\\unirtos-app\\qos_build\\release\\EG800ZCNLAR01A01_OCPU_20260625\\at_command.hbinpkg",
+  "PackageExtDir": "D:\\unirtos-app\\qos_build\\release\\EG800ZCNLAR01A01_OCPU_20260625\\pkg_extract_tmp",
+  "PackageModTime": 1790733832,
+  "PackageSize": 2697982,
+  "PackageHash": "530b1ea844f68a9b41f68b1321e8a1910d84653a4a28ea509694b794a636cc00"
+ }
+}

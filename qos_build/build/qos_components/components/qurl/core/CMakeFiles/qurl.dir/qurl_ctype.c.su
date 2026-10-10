@@ -1,0 +1,10 @@
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_ctype.c:50:6:qurl_ctype_isspace	0	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_ctype.c:57:6:qurl_ctype_isdigit	0	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_ctype.c:64:6:qurl_ctype_isalnum	0	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_ctype.c:71:6:qurl_ctype_isxdigit	0	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_ctype.c:78:6:qurl_ctype_isgraph	0	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_ctype.c:85:6:qurl_ctype_isprint	0	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_ctype.c:92:6:qurl_ctype_isalpha	0	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_ctype.c:99:6:qurl_ctype_isupper	0	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_ctype.c:106:6:qurl_ctype_islower	0	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_ctype.c:113:6:qurl_ctype_iscntrl	0	static

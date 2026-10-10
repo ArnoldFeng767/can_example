@@ -1,0 +1,60 @@
+[config]
+line_0_com = COM9
+;quectel add com for at com + usb com download mode
+line_0_snd_ass_com = COM65535
+agbaud=921600
+filter_embedusb=0
+filter_externcom=1
+path_convert_cfg_avail = 1
+;pathconv_to_file_basedir_pairs=agentboot:agpath
+pathconv_to_file_basedir_pairs=bootloader:headpath;system:headpath
+baud=130000
+
+[agentboot]
+;tool_basedir = 1
+agpath = .\agentboot_usb\agentboot.bin
+
+[storage_cfg]
+#will be update when load
+format_path = format_ec718m_none.json
+
+[bootloader]
+headpath = .\bl_sec_header.bin
+blpath = .\image_ec718\ap_bootloader.bin
+blloadskip = 0
+burnaddr= 0xf
+;system.bin file infomation
+[system]
+headpath = .\sys_sec_header.bin
+syspath =.\image_ec718\ap_demo-flash.bin
+sysloadskip = 0
+burnaddr = 0xf
+
+[cp_system]
+cp_syspath = .\image_ec718\cp-demo-flash.bin
+cp_sysloadskip = 0
+burnaddr = 0xf
+
+[security]
+hashtype = 1
+extern_sec_head_used=1
+curve_type = curve_224
+[control]
+prempt_detect_time = 6
+msg_waittime = 2
+max_preamble_cnt = 8
+lpc_recover_en = 0
+;cfg reset to 2, skip reset pin
+pullup_qspi =1
+trc_ser= 1
+rom_version= 0000000103030000
+rom_version_append_list= 0000000203030000;0000000303030000
+
+;chaim 2023.7.5 not config rftable,download in factory mode
+dribble_dld_en=0
+
+;quectel open at com + usb com download mode
+assist_second_port_cmd = at+ecrst=delay,599
+[flexfile0]
+filepath = .\product_sets\ec718_products\ec718p\rfCaliTb\MergeRfTable.bin
+burnaddr = 0x3f2000

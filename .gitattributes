@@ -1,0 +1,13 @@
+# Firmware / build artifacts must never be line-ending converted.
+# Forces git to treat these as binary (byte-for-byte), avoiding CRLF corruption.
+qos_build/** -text
+*.bin -text
+*.elf -text
+*.a -text
+*.o -text
+*.obj -text
+*.7z -text
+*.hbinpkg -text
+*.map -text
+*.su -text
+*.ld -text

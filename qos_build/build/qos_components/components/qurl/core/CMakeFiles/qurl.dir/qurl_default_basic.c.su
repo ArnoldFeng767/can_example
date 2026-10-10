@@ -1,0 +1,5 @@
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_default_basic.c:19:5:qurl_default_vasprintf	32	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_default_basic.c:46:5:qurl_default_asprintf	12	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_default_basic.c:87:5:qurl_default_strtoofft	32	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_default_basic.c:155:14:qurl_default_base64_encode	20	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_default_basic.c:216:14:qurl_default_base64_decode	288	static

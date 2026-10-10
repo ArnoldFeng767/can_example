@@ -1,0 +1,13 @@
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_http_multiform.c:82:21:multiform_clean_running_data	24	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_http_multiform.c:38:21:multiform_clean_form_data.isra	8	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_http_multiform.c:118:14:qurl_http_multiform_init	16	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_http_multiform.c:149:14:qurl_http_multiform_delete	24	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_http_multiform.c:189:14:qurl_http_multiform_set_id_limit	0	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_http_multiform.c:201:7:qurl_http_multiform_get_boundary	0	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_http_multiform.c:206:6:qurl_http_multiform_get_total_len	0	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_http_multiform.c:211:6:qurl_http_multiform_get_len	0	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_http_multiform.c:216:14:qurl_http_multiform_set_form	64	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_http_multiform.c:399:14:qurl_http_multiform_trans_init	48	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_http_multiform.c:503:14:qurl_http_multiform_trans_deinit	0	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_http_multiform.c:513:14:qurl_http_multiform_send_body	48	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_http_multiform.c:725:12:qurl_http_multiform_send_body_is_done	0	static

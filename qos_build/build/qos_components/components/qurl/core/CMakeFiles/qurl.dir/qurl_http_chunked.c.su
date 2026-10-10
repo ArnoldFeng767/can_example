@@ -1,0 +1,2 @@
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_http_chunked.c:27:6:qurl_http_chunked_init	0	static
+C:/Users/arnold.feng/.unirtos/sdk/v1.0.6/qos_components/components/qurl/core/qurl_http_chunked.c:37:14:qurl_http_chunked_read_body	72	static
