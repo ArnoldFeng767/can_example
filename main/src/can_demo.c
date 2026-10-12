@@ -47,10 +47,8 @@
 // CAN bit rate (kHz), options: 1000 / 500 / 250 / 125 / 100
 #define CAN_BIT_RATE_KHZ    (500)
 
-// CAN work mode is selected automatically by controller capability (see can_init):
-//   internal_loopback supported -> QOSA_CAN_MODE_LOOPBACK_INTERNAL (internal loopback, self TX/RX, not visible on bus)
-//   external_loopback supported -> QOSA_CAN_MODE_LOOPBACK_EXTERNAL (external loopback, visible on bus)
-//   neither supported            -> QOSA_CAN_MODE_NORMAL (normal TX/RX, needs bus peer ACK)
+// CAN work mode: NORMAL (real bus communication with an external peer / CAN box).
+// Loopback modes are for self-test only and are not used in this demo.
 
 // CAN pin configuration (adjust per actual hardware schematic)
 #define CAN_TX_PIN_NUM      QOSA_PIN_63
@@ -100,6 +98,12 @@
 // TX period (ms)
 #define CAN_TX_PERIOD_MS            (1000)
 
+// RX queue poll period (ms): how often to drain frames received from the external peer
+#define CAN_RX_POLL_PERIOD_MS       (100)
+
+// Stack usage / bus status report period (ms)
+#define CAN_STACK_REPORT_MS         (2000)
+
 /*===========================================================================
  * Global Variables
  *==========================================================================*/
@@ -113,7 +117,7 @@ static qosa_uint32_t g_tx_obj_idx = 0xFFFFFFFFU;  // TX object index
 static qosa_can_msg_info_t g_tx_msg_info;         // TX message info
 static volatile qosa_uint32_t g_tx_cnt = 0;       // TX counter
 
-static qosa_can_mode_e g_can_work_mode = QOSA_CAN_MODE_NORMAL;  // actually selected work mode (auto-selected by capability)
+static qosa_can_mode_e g_can_work_mode = QOSA_CAN_MODE_NORMAL;  // CAN work mode (forced NORMAL for external bus communication)
 
 /*===========================================================================
  * Callback Functions
@@ -240,7 +244,7 @@ static qosa_int32_t can_init(void)
     }
     num_objects = can_cap.num_objects;
 
-    // Print controller capability flags to help diagnose loopback support
+    // Print controller capability flags for diagnostics
     QLOGI("can caps: num_obj=%u, internal_lb=%u, external_lb=%u, monitor=%u, restricted=%u",
           num_objects,
           (unsigned)can_cap.internal_loopback,
@@ -248,20 +252,10 @@ static qosa_int32_t can_init(void)
           (unsigned)can_cap.monitor_mode,
           (unsigned)can_cap.restricted_mode);
 
-    // Auto-select work mode by capability: internal loopback > external loopback > normal
-    if (can_cap.internal_loopback)
-    {
-        g_can_work_mode = QOSA_CAN_MODE_LOOPBACK_INTERNAL;
-    }
-    else if (can_cap.external_loopback)
-    {
-        g_can_work_mode = QOSA_CAN_MODE_LOOPBACK_EXTERNAL;
-    }
-    else
-    {
-        g_can_work_mode = QOSA_CAN_MODE_NORMAL;
-        QLOGW("loopback not supported, fall back to normal mode");
-    }
+    // Force NORMAL mode to talk to a real bus peer (external CAN box).
+    // Loopback must NOT be used here: in loopback the controller ACKs its own
+    // frames and never receives frames coming from the external peer.
+    g_can_work_mode = QOSA_CAN_MODE_NORMAL;
 
     // 2. Initialize CAN and register the event callbacks
     ret = qosa_can_init(QOSA_CAN_DEV_NUM0, can_unit_event_cb, can_object_event_cb);
@@ -361,7 +355,7 @@ static qosa_int32_t can_init(void)
     g_tx_msg_info.id  = ARM_CAN_EXTENDED_ID(0x123);
     g_tx_msg_info.dlc = 8;
 
-    // 11. Enter work mode (loopback or normal, auto-selected by controller capability)
+    // 11. Enter work mode (NORMAL)
     ret = qosa_can_set_mode(QOSA_CAN_DEV_NUM0, g_can_work_mode);
     if (!can_ret_check(ret, "enter work mode"))
     {
@@ -483,9 +477,6 @@ static void can_show_status(void)
 // CPU usage monitoring period (ms), valid range 200~60000
 #define CAN_CPU_USAGE_PERIOD_MS     (2000)
 
-// Stack free-space report interval (in task loop iterations, report roughly every N loops)
-#define CAN_STACK_REPORT_CYCLE      (5)
-
 /**
  * @brief CPU usage callback (called periodically by the qosa_cpu_usage module in worker task context)
  * @param cpu_usage_pct CPU usage percentage of the last period (0-100)
@@ -548,33 +539,34 @@ static void can_demo_process(void *ctx)
         QLOGE("cpu usage start failed, ret = %d", cpu_ret);
     }
 
-    // Send one frame immediately
+    // Send one frame immediately so the external peer sees the board right away
     can_tx_once();
 
-    // Stack report counter
-    qosa_uint32_t stack_cycle_cnt = 0;
+    // Loop counter for slow periodic actions (TX / stack / status)
+    qosa_uint32_t loop_cnt = 0;
 
     while (1)
     {
-        // Send one frame periodically: the rhythm is driven by the fixed delay below,
-        // not by whether the event flag times out, to avoid the TX rhythm getting out of
-        // control or stopping entirely when bus error / loopback self-RX events keep firing
-        can_tx_once();
-
-        // Wait one TX period (one frame every 1 second)
-        qosa_task_sleep_ms(CAN_TX_PERIOD_MS);
-
-        // Poll the RX queue (in loopback mode the frame just sent loops back into RX)
+        // Drain RX every iteration so frames from the external CAN box are printed
+        // promptly (<= CAN_RX_POLL_PERIOD_MS latency)
         can_rx_poll();
 
-        // Periodically report the task's remaining stack space and bus status
-        stack_cycle_cnt++;
-        if (stack_cycle_cnt >= CAN_STACK_REPORT_CYCLE)
+        loop_cnt++;
+
+        // Send one frame every ~1 second
+        if ((loop_cnt % (CAN_TX_PERIOD_MS / CAN_RX_POLL_PERIOD_MS)) == 0)
         {
-            stack_cycle_cnt = 0;
+            can_tx_once();
+        }
+
+        // Report stack usage and bus status every ~2 seconds
+        if ((loop_cnt % (CAN_STACK_REPORT_MS / CAN_RX_POLL_PERIOD_MS)) == 0)
+        {
             can_show_stack_usage();
             can_show_status();
         }
+
+        qosa_task_sleep_ms(CAN_RX_POLL_PERIOD_MS);
     }
 }
 
